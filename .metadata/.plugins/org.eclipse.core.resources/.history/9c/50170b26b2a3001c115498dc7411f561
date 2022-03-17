@@ -1,0 +1,9 @@
+package Modelo;
+
+public class Destino {
+	private Integer id;
+	private String Destino;
+	private int  ida;
+	private int Volta;
+
+}

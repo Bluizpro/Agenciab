@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+import Modelo.Programa;
+import Service.CadastroService;
+
+
+
+public class main {
+  public static void main(String[]args) {
+	 	  
+	  CadastroService programa = new CadastroService();
+	  int opcao;
+	  Scanner sc = new Scanner(System.in);
+	  
+	  do {
+		  System.out.println("======== AgenciaBluiz=========");
+		  System.out.println("====== Menu=======");
+		  System.out.println("1 - Cadastrar");
+		  System.out.println("2 - Cadastrar Destino");
+		  System.out.println("3 - Editar Informações");
+		  System.out.println("4 - Sair");
+		  
+		  opcao = sc.nextInt();
+		  switch (opcao) {		
+		  case 1:
+			  
+			  break;
+			  
+		  }
+	  }
+  }
+	  
+  

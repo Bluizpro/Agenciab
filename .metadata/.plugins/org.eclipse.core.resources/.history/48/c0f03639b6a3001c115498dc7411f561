@@ -1,0 +1,54 @@
+package Service;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.util.Scanner;
+import connector.Conection;
+import Modelo.Programa;
+
+public class CadastroService {
+	
+	public void salva() {
+		Scanner sc = new Scanner(System.in);
+		
+		Programa programa = new Programa();
+		
+		System.out.println("Digite seu login!");		
+		programa.setNome(sc.nextLine());
+		
+		System.out.println("Digite seu Email ");
+		programa.setEmail(sc.nextLine());
+	
+		System.out.println("Digite uma senha forte!!!!");
+        programa.setSenha(sc.nextInt());
+        
+        String sql = "INSERT INTO Cadastro(nome, email, senha) VALUES(?,?,?)";
+        
+        Connection conn = null;
+        PreparedStatement pstm = null; 
+        try {
+        	conn = Conection.createConnection();
+        	pstm = conn.prepareStatement(sql);
+        	
+        	pstm.setString(1, programa.getNome());
+        	pstm.setString(2, programa.getEmail());
+        	pstm.setInt(3, programa.getSenha());
+        	
+        	System.out.println("Cadastro Efetuado com sucesso");
+        	
+        	pstm.execute();
+        	pstm.close();
+        	
+        }catch(Exception ex){
+        	System.out.println(ex.getMessage());
+        	
+        }
+	}
+}
+	
+
+
+	
+	
+
+

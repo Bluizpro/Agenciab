@@ -1,0 +1,45 @@
+import java.util.Scanner;
+
+import Modelo.Programa;
+import Service.CadastroService;
+
+
+
+public class main {
+  public static void main(String[]args) {
+	 	  
+	  CadastroService cadastrar = new CadastroService();
+	  
+	  int opcao;
+	  Scanner sc = new Scanner(System.in);
+	  
+        do {        
+		  System.out.println("======== AgenciaBluiz=========");
+		  System.out.println("====== Menu=======");
+		  System.out.println("1 - Cadastrar");
+		  System.out.println("2 - Deletar");
+		  System.out.println("3 - Cadastrar Destino");
+		  System.out.println("4 - Editar Informações");
+		  System.out.println("5 - Sair");
+		  opcao = sc.nextInt();
+		  switch (opcao) {
+		  case 1:
+			  cadastrar.Cadastrar(sc);			  
+			  break;
+		  case 2:
+			  cadastrar.Update();
+			  break;
+			  cadastrar.Delete();
+			  break;
+			  default:
+				  System.out.println("Numero invalido");
+				  break;
+		  }
+        }while(opcao !=1);
+  }
+}
+  
+	  
+
+
+  
